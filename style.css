@@ -1,0 +1,468 @@
+:root {
+    --gold-primary: #d4af37;
+    --gold-dark: #b89324;
+    --pink-floral: #c67c85;
+    --pink-light: #eabec4;
+    --text-dark: #3a2e12;
+    --text-light: #5a4b2a;
+    --bg-cream: #fdfaf1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: url('https://www.transparenttextures.com/patterns/cream-paper.png'), linear-gradient(135deg, #fdf5e6 0%, #ecd078 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cinematic Splash Screen */
+.splash-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.splash-animation.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.splash-animation img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 40% center; /* Fine-tuned centering */
+    z-index: 1;
+    transition: transform 1.5s ease-out, filter 1.5s ease-out;
+}
+
+.splash-animation img.zoom-blur {
+    transform: scale(1.2);
+    filter: blur(10px) brightness(1.3);
+}
+
+.splash-ui {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Subtle dark overlay for text readability */
+    transition: opacity 0.8s ease-in-out;
+}
+
+.splash-ui.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-text {
+    animation: float 3s ease-in-out infinite;
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+.floating-text h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    line-height: 1.1;
+}
+
+.floating-text span {
+    font-size: 1.8rem;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-primary);
+    display: block;
+    margin: 10px 0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.tap-container {
+    text-align: center;
+}
+
+.tap-hint {
+    font-size: 1rem;
+    color: #eee;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+.tap-btn {
+    padding: 12px 40px;
+    font-size: 1.1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    background-color: var(--gold-primary);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* Main Content Wrapper */
+.content {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.content.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Section 1: Main Card */
+.card-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.card-inner {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--gold-primary);
+    border-radius: 20px;
+    padding: 60px 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Floral Corners */
+.floral-top, .floral-bottom {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Flower_Pink_Transparent.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.85;
+}
+
+.floral-top {
+    top: -40px;
+    left: -40px;
+    transform: rotate(135deg);
+}
+
+.floral-bottom {
+    bottom: -40px;
+    right: -40px;
+    transform: rotate(-45deg);
+}
+
+.bismillah {
+    font-size: 3rem;
+    color: var(--gold-primary);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.arabic-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.blessings {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.request-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: var(--pink-floral);
+}
+
+.names-wrapper {
+    margin: 30px 0;
+}
+
+.bride-name, .groom-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+    color: var(--pink-floral);
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.parents-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.ampersand {
+    display: inline-block;
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--gold-dark);
+    margin: 10px 0 25px 0;
+}
+
+.journey-text {
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+/* Common Section Titles */
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: var(--pink-floral);
+    margin-bottom: 40px;
+}
+
+/* Section 2: Events */
+.events-section {
+    /* Removed background for seamless flow */
+}
+
+.event-card {
+    background: #fff;
+    border: 1px solid var(--gold-primary);
+    border-radius: 15px;
+    padding: 30px 20px;
+    margin: 0 auto 25px auto;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.event-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.event-card .date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--gold-dark);
+    margin-bottom: 5px;
+}
+
+.event-card .time {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.event-card .venue-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--pink-floral);
+    margin-bottom: 10px;
+}
+
+.event-card .event-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* Section 3: Venue */
+.venue-section {
+    /* Removed background for seamless flow */
+}
+
+.main-venue-details {
+    max-width: 450px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 15px;
+    border: 1px dashed var(--gold-dark);
+}
+
+.main-venue-details h3 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.main-venue-details p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.main-venue-details .note {
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--pink-floral);
+    margin-top: 20px;
+}
+
+/* Section 4: Closing */
+.closing-section {
+    padding-bottom: 80px;
+}
+
+.closing-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+}
+
+.closing-text.highlight {
+    font-weight: 600;
+    color: var(--pink-floral);
+    font-style: italic;
+}
+
+.dua-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .floating-text h1 { font-size: 3.5rem; }
+    .floral-top, .floral-bottom {
+        width: 140px;
+        height: 140px;
+    }
+    .bride-name, .groom-name {
+        font-size: 2.8rem;
+    }
+    .bismillah { font-size: 3rem; }
+    .card-inner {
+        padding: 50px 15px;
+    }
+}
+
+/* Desktop & Larger Screens Adjustments */
+@media (min-width: 768px) {
+    .floating-text h1 { font-size: 6rem; }
+    .floating-text span { font-size: 2.5rem; }
+    
+    .card-inner {
+        max-width: 750px;
+        padding: 80px 60px;
+    }
+    .floral-top, .floral-bottom {
+        width: 250px;
+        height: 250px;
+    }
+    .bismillah { font-size: 4.5rem; }
+    .bride-name, .groom-name { font-size: 4.5rem; }
+    .arabic-text { font-size: 0.9rem; }
+    .parents-name { font-size: 0.8rem; }
+    
+    .section-title { font-size: 4rem; margin-bottom: 60px; }
+    
+    /* Events side-by-side */
+    .events-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .events-section .section-title {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .event-card {
+        margin: 0;
+        flex: 1 1 300px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    
+    .main-venue-details {
+        max-width: 600px;
+        padding: 60px 40px;
+    }
+    .main-venue-details h3 { font-size: 2.2rem; }
+    .main-venue-details p { font-size: 1.1rem; }
+    
+    .closing-text { font-size: 1.3rem; max-width: 700px; }
+    .dua-text { font-size: 0.9rem; max-width: 600px; }
+}

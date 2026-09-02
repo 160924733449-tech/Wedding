@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation | Fatima & Ismail</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="nasheed.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Cinematic Splash & Animation Screen -->
+    <div id="splash-animation" class="splash-animation">
+        <img id="animation-frame" src="ezgif-6cb4b9acd78cfb56-jpg/ezgif-frame-001.jpg" alt="Background Animation">
+        
+        <!-- Overlay UI -->
+        <div id="splash-ui" class="splash-ui">
+            <div class="floating-text">
+                <h1>Ismail <span>weds</span> Fatima</h1>
+            </div>
+            <div class="tap-container">
+                <p class="tap-hint">Tap to open the invitation</p>
+                <button id="open-btn" class="tap-btn">Open</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Invitation Content -->
+    <div id="main-content" class="content hidden">
+        
+        <!-- Section 1: Main Card -->
+        <section class="card-section">
+            <div class="card-inner">
+                <div class="floral-top"></div>
+                
+                <div class="bismillah">بسم الله الرحمن الرحيم</div>
+                <p class="arabic-text">In the name of Allah, the Most Gracious, the Most Merciful</p>
+                
+                <p class="blessings">With the blessings of Allah (SWT)<br>and under the guidance of our beloved parents</p>
+                
+                <p class="request-text">We request the honour of your presence at the Nikah of</p>
+                
+                <div class="names-wrapper">
+                    <h2 class="bride-name">Fatima Aisha</h2>
+                    <p class="parents-name">DAUGHTER OF MR. ABDUL KHADAR & MRS. ZAHRA YASMIN</p>
+                    
+                    <span class="ampersand">&amp;</span>
+                    
+                    <h2 class="groom-name">Ismail Ahmed</h2>
+                    <p class="parents-name">SON OF MR. IBRAHIM AHMED & MRS. SAARA HABEEB</p>
+                </div>
+                
+                <p class="journey-text">As they begin their journey of love, faith, and togetherness.</p>
+                <div class="floral-bottom"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Events -->
+        <section class="events-section">
+            <h2 class="section-title">The Festivities Begin</h2>
+            
+            <div class="event-card">
+                <div class="event-icon">✨</div>
+                <h3>Rassam (Mehendi)</h3>
+                <p class="date">DECEMBER 23, 2026</p>
+                <p class="time">6:30 PM</p>
+                <p class="venue-name">The Courtyard</p>
+                <p class="event-desc">An intimate evening of colour, music, and family celebrations.</p>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">💍</div>
+                <h3>Shaadi (Nikah)</h3>
+                <p class="date">DECEMBER 25, 2026</p>
+                <p class="time">6:30 PM</p>
+                <p class="venue-name">ITC Grand Chola</p>
+                <p class="event-desc">The marriage solemnisation followed by dinner and celebrations.</p>
+            </div>
+
+            <div class="event-card">
+                <div class="event-icon">🌹</div>
+                <h3>Valima</h3>
+                <p class="date">DECEMBER 27, 2026</p>
+                <p class="time">7:00 PM</p>
+                <p class="venue-name">The Garden Room</p>
+                <p class="event-desc">A celebratory feast to conclude the wedding festivities.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Venue Details -->
+        <section class="venue-section">
+            <h2 class="section-title">Where we will celebrate</h2>
+            <div class="main-venue-details">
+                <h3>ITC Grand Chola</h3>
+                <p>63, Mount Road, Little Mount, Guindy,<br>Chennai, Tamil Nadu 600032</p>
+                <p class="note">Please arrive 30 minutes before the Nikah ceremony.</p>
+            </div>
+        </section>
+
+        <!-- Section 4: Closing -->
+        <section class="closing-section">
+            <h2 class="section-title">Your presence is our present</h2>
+            <p class="closing-text">Your love, duas, blessings, and presence are the greatest gifts we could ever ask for. We feel truly grateful to celebrate this special day with you.</p>
+            <p class="closing-text highlight">We cannot wait to celebrate with you.</p>
+            <p class="dua-text">May Allah place barakah in this union and fill the journey with love and peace.</p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
