@@ -176,10 +176,8 @@ body {
 .page-border {
     position: fixed;
     left: 0;
-    width: 100%;
+    width: 100vw; /* Spans full viewport width */
     height: auto;
-    max-height: 200px;
-    object-fit: contain;
     z-index: 10;
     pointer-events: none;
 }
@@ -449,7 +447,7 @@ section {
         height: 140px;
     }
     .page-border {
-        max-height: 120px;
+        /* let it scale naturally */
     }
     .bride-name, .groom-name {
         font-size: 2.8rem;
