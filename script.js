@@ -25,9 +25,22 @@ document.addEventListener("DOMContentLoaded", () => {
             if (envelopeVideo) {
                 envelopeVideo.play();
                 
-                // When the video ends, trigger the glow transition
+                let transitionTriggered = false;
+                
+                // Trigger the glow transition at the 4 second mark
+                envelopeVideo.addEventListener('timeupdate', () => {
+                    if (envelopeVideo.currentTime >= 4.0 && !transitionTriggered) {
+                        transitionTriggered = true;
+                        triggerGlowTransition();
+                    }
+                });
+
+                // Fallback in case the video ends before 4 seconds
                 envelopeVideo.addEventListener('ended', () => {
-                    triggerGlowTransition();
+                    if (!transitionTriggered) {
+                        transitionTriggered = true;
+                        triggerGlowTransition();
+                    }
                 });
             } else {
                 triggerGlowTransition(); // Fallback if video fails
