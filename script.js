@@ -4,21 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainContent = document.getElementById('main-content');
     const openBtn = document.getElementById('open-btn');
     const bgMusic = document.getElementById('bg-music');
-    const animationFrame = document.getElementById('animation-frame');
-
-    // Setup Animation Frames
-    const totalFrames = 60;
-    const frames = [];
-    const folderPath = 'ezgif-6cb4b9acd78cfb56-jpg';
-    
-    // Preload images for smooth playback
-    for (let i = 1; i <= totalFrames; i++) {
-        const img = new Image();
-        // Format number with leading zeros (001, 002, etc.)
-        const frameNum = String(i).padStart(3, '0');
-        img.src = `${folderPath}/ezgif-frame-${frameNum}.jpg`;
-        frames.push(img.src);
-    }
+    const envelopeVideo = document.getElementById('envelope-video');
+    const glowTransition = document.getElementById('glow-transition');
 
     openBtn.addEventListener('click', () => {
         // Fade out just the text and button overlay
@@ -33,39 +20,45 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Wait for the overlay text to fade out before starting the cinematic animation
+        // Wait for the overlay text to fade out before starting the video
         setTimeout(() => {
-            
-            // Play the image sequence animation
-            let currentFrame = 0;
-            const frameRate = 33; // ~30 fps (33ms per frame)
-            
-            const playSequence = setInterval(() => {
-                if (currentFrame < totalFrames) {
-                    animationFrame.src = frames[currentFrame];
-                    currentFrame++;
-                } else {
-                    // Animation finished
-                    clearInterval(playSequence);
-                    
-                    // Trigger the cinematic end animation (zoom and blur)
-                    animationFrame.classList.add('zoom-blur');
-                    
-                    // Slightly delay the fade out so the zoom effect starts being visible
-                    setTimeout(() => {
-                        // Fade out the entire cinematic animation wrapper
-                        splashAnimation.classList.add('hidden');
-                        
-                        // Show and fade in main scrolling content
-                        setTimeout(() => {
-                            mainContent.classList.remove('hidden');
-                            void mainContent.offsetWidth; // Trigger reflow for CSS transition
-                            mainContent.classList.add('visible');
-                        }, 500); // Crossfade timing
-                    }, 300);
-                }
-            }, frameRate);
-            
+            if (envelopeVideo) {
+                envelopeVideo.play();
+                
+                // When the video ends, trigger the glow transition
+                envelopeVideo.addEventListener('ended', () => {
+                    triggerGlowTransition();
+                });
+            } else {
+                triggerGlowTransition(); // Fallback if video fails
+            }
         }, 800); // 800ms matches the CSS transition time for splash-ui
     });
+
+    function triggerGlowTransition() {
+        // 1. Show and activate glow
+        glowTransition.classList.remove('hidden');
+        // Trigger reflow
+        void glowTransition.offsetWidth;
+        glowTransition.classList.add('active');
+
+        // Wait for glow to become fully bright (e.g. 1.5 seconds)
+        setTimeout(() => {
+            // Hide the splash screen completely behind the glow
+            splashAnimation.classList.add('hidden');
+            
+            // Prepare main content
+            mainContent.classList.remove('hidden');
+            void mainContent.offsetWidth; // Trigger reflow
+            mainContent.classList.add('visible');
+
+            // 2. Fade out the glow
+            glowTransition.classList.remove('active');
+
+            // 3. Remove glow element from DOM after fade out
+            setTimeout(() => {
+                glowTransition.classList.add('hidden');
+            }, 1500); // wait for glow fade out
+        }, 1500); // Wait for glow fade in
+    }
 });
