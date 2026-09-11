@@ -216,11 +216,10 @@ section {
     position: relative;
     max-width: 500px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: transparent;
     border: 2px solid var(--gold-primary);
     border-radius: 20px;
     padding: 60px 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -331,13 +330,12 @@ section {
 }
 
 .event-card {
-    background: #fff;
+    background: transparent;
     border: 1px solid var(--gold-primary);
     border-radius: 15px;
     padding: 30px 20px;
     margin: 0 auto 25px auto;
     max-width: 450px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .event-icon {
@@ -385,7 +383,7 @@ section {
 .main-venue-details {
     max-width: 450px;
     margin: 0 auto;
-    background: #fff;
+    background: transparent;
     padding: 40px 20px;
     border-radius: 15px;
     border: 1px dashed var(--gold-dark);
