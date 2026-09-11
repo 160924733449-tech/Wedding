@@ -187,12 +187,12 @@ body {
 .page-border.header-border {
     top: 0;
     object-position: top center;
+    transform: rotate(180deg);
 }
 
 .page-border.footer-border {
     bottom: 0;
     object-position: bottom center;
-    transform: rotate(180deg);
 }
 
 .hidden {
