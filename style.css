@@ -173,21 +173,25 @@ body {
     opacity: 1;
 }
 
-.corner-border {
+.page-border {
     position: fixed;
-    width: 250px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
     z-index: 10;
     pointer-events: none;
 }
 
-.corner-border.top-left {
+.page-border.header-border {
     top: 0;
-    left: 0;
+    object-position: top center;
 }
 
-.corner-border.bottom-right {
+.page-border.footer-border {
     bottom: 0;
-    right: 0;
+    object-position: bottom center;
     transform: rotate(180deg);
 }
 
@@ -444,8 +448,8 @@ section {
         width: 140px;
         height: 140px;
     }
-    .corner-border {
-        width: 150px;
+    .page-border {
+        max-height: 120px;
     }
     .bride-name, .groom-name {
         font-size: 2.8rem;
