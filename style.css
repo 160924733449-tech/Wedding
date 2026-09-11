@@ -409,6 +409,26 @@ section {
     margin-top: 20px;
 }
 
+.map-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: var(--gold-primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: var(--gold-dark);
+}
+
 /* Section 4: Closing */
 .closing-section {
     padding-bottom: 80px;
