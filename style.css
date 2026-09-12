@@ -1,6 +1,7 @@
 :root {
     --gold-primary: #d4af37;
     --gold-dark: #b89324;
+    --gold-text: #967a21; /* WCAG AA compliant gold for text on cream */
     --pink-floral: #c67c85;
     --pink-light: #eabec4;
     --text-dark: #3a2e12;
@@ -100,19 +101,19 @@ body {
 
 .floating-text h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 4.5rem;
+    font-size: 5rem;
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
     line-height: 1.1;
 }
 
 .floating-text span {
-    font-size: 1.8rem;
-    font-family: 'Playfair Display', serif;
-    color: var(--gold-primary);
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+    color: #fff;
     display: block;
     margin: 10px 0;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 @keyframes float {
@@ -167,6 +168,8 @@ body {
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 120px;
 }
 
 .content.visible {
@@ -199,17 +202,17 @@ body {
 
 /* Sections */
 section {
-    padding: 60px 20px;
+    padding: 30px 20px;
     text-align: center;
 }
 
 /* Section 1: Main Card */
 .card-section {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 40px;
+    padding-bottom: 20px;
 }
 
 .card-inner {
@@ -217,9 +220,9 @@ section {
     max-width: 500px;
     width: 100%;
     background: transparent;
-    border: 2px solid var(--gold-primary);
+    border: none;
     border-radius: 20px;
-    padding: 60px 25px;
+    padding: 20px 25px;
     overflow: hidden;
 }
 
@@ -250,7 +253,7 @@ section {
     font-family: 'Noto Nastaliq Urdu', serif;
     font-size: 2.5rem;
     line-height: 2;
-    color: var(--gold-primary);
+    color: var(--gold-text);
     margin-bottom: 20px;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -285,7 +288,7 @@ section {
 
 .bride-name, .groom-name {
     font-family: 'Great Vibes', cursive;
-    font-size: 3.2rem;
+    font-size: 4rem;
     color: var(--pink-floral);
     line-height: 1.2;
     margin-bottom: 5px;
@@ -293,7 +296,7 @@ section {
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     letter-spacing: 1.5px;
     color: var(--text-light);
     text-transform: uppercase;
@@ -321,7 +324,7 @@ section {
     font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     color: var(--pink-floral);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 /* Section 2: Events */
@@ -331,7 +334,7 @@ section {
 
 .event-card {
     background: transparent;
-    border: 1px solid var(--gold-primary);
+    border: none;
     border-radius: 15px;
     padding: 30px 20px;
     margin: 0 auto 25px auto;
@@ -353,7 +356,7 @@ section {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 2px;
-    color: var(--gold-dark);
+    color: var(--gold-text);
     margin-bottom: 5px;
 }
 
@@ -386,7 +389,7 @@ section {
     background: transparent;
     padding: 40px 20px;
     border-radius: 15px;
-    border: 1px dashed var(--gold-dark);
+    border: none;
 }
 
 .main-venue-details h3 {
@@ -403,7 +406,7 @@ section {
     margin-bottom: 15px;
 }
 
-.main-venue-details .note {
+.main-venue-details .note, .event-card .note {
     font-style: italic;
     font-size: 0.85rem;
     color: var(--pink-floral);
@@ -411,9 +414,12 @@ section {
 }
 
 .map-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
-    padding: 10px 25px;
+    padding: 15px 30px;
+    min-height: 44px;
     background-color: var(--gold-primary);
     color: #fff;
     text-decoration: none;
@@ -432,7 +438,7 @@ section {
 
 /* Section 4: Closing */
 .closing-section {
-    padding-bottom: 80px;
+    padding-bottom: 40px;
 }
 
 .closing-text {
@@ -455,14 +461,14 @@ section {
     letter-spacing: 1px;
     color: var(--text-light);
     max-width: 400px;
-    margin: 40px auto 0 auto;
+    margin: 20px auto 0 auto;
     text-transform: uppercase;
     line-height: 1.5;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 480px) {
-    .floating-text h1 { font-size: 3.5rem; }
+    .floating-text h1 { font-size: 4rem; }
     .floral-top, .floral-bottom {
         width: 140px;
         height: 140px;
@@ -471,18 +477,17 @@ section {
         /* let it scale naturally */
     }
     .bride-name, .groom-name {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
     }
     .bismillah { font-size: 3rem; }
     .card-inner {
-        padding: 50px 15px;
+        padding: 25px 15px;
     }
 }
 
 /* Desktop & Larger Screens Adjustments */
 @media (min-width: 768px) {
     .floating-text h1 { font-size: 6rem; }
-    .floating-text span { font-size: 2.5rem; }
     
     .card-inner {
         max-width: 750px;

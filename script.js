@@ -22,14 +22,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Wait for the overlay text to fade out before starting the video
         setTimeout(() => {
+            let transitionTriggered = false;
+
+            // Failsafe: guarantee the invitation opens after 2.5s even if video fails
+            const forceOpen = setTimeout(() => {
+                if (!transitionTriggered) {
+                    transitionTriggered = true;
+                    triggerGlowTransition();
+                }
+            }, 2500);
+
             if (envelopeVideo) {
-                envelopeVideo.play();
-                
-                let transitionTriggered = false;
+                envelopeVideo.play().catch(() => {
+                    // Video failed to play — failsafe timeout will handle it
+                });
                 
                 // Trigger the glow transition at the 4 second mark
                 envelopeVideo.addEventListener('timeupdate', () => {
                     if (envelopeVideo.currentTime >= 4.0 && !transitionTriggered) {
+                        clearTimeout(forceOpen);
                         transitionTriggered = true;
                         triggerGlowTransition();
                     }
@@ -38,12 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Fallback in case the video ends before 4 seconds
                 envelopeVideo.addEventListener('ended', () => {
                     if (!transitionTriggered) {
+                        clearTimeout(forceOpen);
                         transitionTriggered = true;
                         triggerGlowTransition();
                     }
                 });
             } else {
-                triggerGlowTransition(); // Fallback if video fails
+                clearTimeout(forceOpen);
+                triggerGlowTransition(); // Fallback if video element missing
             }
         }, 800); // 800ms matches the CSS transition time for splash-ui
     });
@@ -59,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             // Hide the splash screen completely behind the glow
             splashAnimation.classList.add('hidden');
+            splashAnimation.style.display = 'none';
+            splashAnimation.setAttribute('aria-hidden', 'true');
             
             // Prepare main content
             mainContent.classList.remove('hidden');
