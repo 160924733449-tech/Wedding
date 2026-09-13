@@ -260,9 +260,9 @@ section {
 
 .bismillah-img {
     max-width: 240px;
-    width: 70%;
+    width: min(60vw, 240px);
     height: auto;
-    margin: 0 auto -10px auto; /* Negative margin to counter transparent space in PNG */
+    margin: 0 auto min(-2vw, -8px) auto;
     display: block;
     mix-blend-mode: multiply;
 }
@@ -270,63 +270,63 @@ section {
 .arabic-text {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    font-size: min(3.5vw, 0.9rem);
     letter-spacing: 0.5px;
     color: var(--text-light);
-    margin-top: -20px; /* Aggressively pulled up towards the image */
-    margin-bottom: 30px; 
+    margin-top: min(-4vw, -16px);
+    margin-bottom: min(7.5vw, 30px); 
     text-transform: none; 
 }
 
 .blessings {
     font-style: italic;
-    font-size: clamp(0.85rem, 3vw, 1rem);
+    font-size: min(4vw, 1rem);
     color: var(--text-dark);
-    margin-bottom: 12px;
+    margin-bottom: min(3vw, 12px);
     line-height: 1.4;
 }
 
 .request-text {
-    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    margin-bottom: 15px; /* Reduced gap before the names start */
+    font-size: min(4.5vw, 1.1rem);
+    margin-bottom: min(3.5vw, 14px);
     color: var(--pink-floral);
 }
 
 .names-wrapper {
-    margin: 10px 0;
+    margin: min(2.5vw, 10px) 0;
 }
 
 .bride-name, .groom-name {
     font-family: 'Pinyon Script', cursive;
-    font-size: clamp(2.2rem, 8vw, 3.5rem);
+    font-size: min(13vw, 3.5rem);
     color: var(--pink-floral);
     line-height: 1.1;
-    margin-bottom: 4px;
+    margin-bottom: min(1vw, 4px);
 }
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+    font-size: min(2.7vw, 0.75rem);
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 15px; /* Reduced gap after parents name */
+    margin-bottom: min(3.5vw, 14px);
 }
 
 .ampersand {
     display: inline-block;
-    font-size: clamp(1.4rem, 5vw, 2rem);
+    font-size: min(7.5vw, 2rem);
     font-style: italic;
     color: var(--gold-dark);
-    margin: 5px 0 15px 0; /* Reduced gap around ampersand */
+    margin: min(1.2vw, 5px) 0 min(3.5vw, 14px) 0;
 }
 
 .journey-text {
     font-style: italic;
-    font-size: clamp(0.78rem, 2.4vw, 0.95rem);
+    font-size: min(3.8vw, 0.95rem);
     color: var(--text-dark);
-    margin-top: 15px;
-    margin-bottom: 8px;
+    margin-top: min(3.5vw, 14px);
+    margin-bottom: min(2vw, 8px);
     line-height: 1.4;
 }
 
@@ -336,11 +336,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 35px; /* Creates a comfortable gap below the journey text */
-    margin-bottom: 20px;
+    margin-top: min(8vw, 32px);
+    margin-bottom: min(5vw, 20px);
     color: var(--pink-floral);
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.7rem;
+    font-size: min(2.5vw, 0.7rem);
     letter-spacing: 1.5px;
     text-transform: uppercase;
     animation: bounceUpDown 2s infinite;
