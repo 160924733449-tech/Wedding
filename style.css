@@ -263,7 +263,7 @@ section {
     max-width: 240px;
     width: 70%;
     height: auto;
-    margin: 0 auto 6px auto;
+    margin: 0 auto 2px auto;
     display: block;
     mix-blend-mode: multiply;
 }
@@ -273,7 +273,8 @@ section {
     font-size: clamp(0.62rem, 2vw, 0.78rem);
     letter-spacing: 1px;
     color: var(--text-light);
-    margin-bottom: 8px;
+    margin-top: 0px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
