@@ -210,13 +210,12 @@ section {
 /* Section 1: Main Card */
 .card-section {
     min-height: 100dvh;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 55px;
-    padding-bottom: 85px;
+    padding-top: 12vh;
+    padding-bottom: 18vh;
     box-sizing: border-box;
 }
 
@@ -270,7 +269,7 @@ section {
 
 .arabic-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.62rem, 2vw, 0.78rem);
+    font-size: clamp(0.65rem, 2.5vw, 0.8rem);
     letter-spacing: 1px;
     color: var(--text-light);
     margin-top: 0px;
@@ -280,14 +279,14 @@ section {
 
 .blessings {
     font-style: italic;
-    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    font-size: clamp(0.85rem, 3vw, 1rem);
     color: var(--text-dark);
     margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .request-text {
-    font-size: clamp(0.85rem, 2.8vw, 1.1rem);
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
     margin-bottom: 10px;
     color: var(--pink-floral);
 }
@@ -298,15 +297,19 @@ section {
 
 .bride-name, .groom-name {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(1.8rem, 6.5vw, 3.5rem);
+    font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: var(--pink-floral);
     line-height: 1.1;
     margin-bottom: 2px;
 }
 
+.bride-name::first-letter, .groom-name::first-letter {
+    font-size: 1.3em;
+}
+
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.6rem, 2.1vw, 0.75rem);
+    font-size: clamp(0.65rem, 2.2vw, 0.75rem);
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
@@ -315,7 +318,7 @@ section {
 
 .ampersand {
     display: inline-block;
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    font-size: clamp(1.4rem, 5vw, 2rem);
     font-style: italic;
     color: var(--gold-dark);
     margin: 2px 0 6px 0;
@@ -382,7 +385,12 @@ section {
 
 /* Section 2: Events */
 .events-section {
-    padding: 30px 20px 40px 20px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15vh 20px;
     box-sizing: border-box;
 }
 
@@ -393,6 +401,7 @@ section {
     padding: 30px 20px;
     margin: 0 auto;
     max-width: 450px;
+    width: 100%;
 }
 
 .event-icon {
@@ -545,7 +554,12 @@ section {
 
 /* Section 4: Closing */
 .closing-section {
-    padding: 30px 20px 100px 20px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15vh 20px;
     box-sizing: border-box;
 }
 
@@ -612,8 +626,10 @@ section {
         max-width: 1200px;
         margin: 0 auto;
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-content: center;
         gap: 30px;
     }
     .events-section .section-title {
