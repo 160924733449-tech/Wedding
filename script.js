@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const DESIGN_H = 680;
 
     function scaleCard() {
-        const card = document.querySelector('.card-inner');
-        if (!card) return;
-
         const vw = window.innerWidth;
         const vh = window.innerHeight;
 
@@ -31,7 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
         // Pick the smallest scale so the card fits fully inside the safe zone
         const scale = Math.min(safeW / DESIGN_W, safeH / DESIGN_H);
 
-        card.style.transform = `scale(${scale})`;
+        // Scale the main card
+        const card = document.querySelector('.card-inner');
+        if (card) {
+            card.style.transform = `scale(${scale})`;
+        }
+
+        // Scale all other sections uniformly so the whole page matches
+        const wrappers = document.querySelectorAll('.scale-wrapper');
+        wrappers.forEach(wrapper => {
+            wrapper.style.transform = `scale(${scale})`;
+        });
     }
 
     scaleCard();
