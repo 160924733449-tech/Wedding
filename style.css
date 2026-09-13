@@ -428,18 +428,19 @@ section {
 }
 
 .event-card .venue-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 22px;
+    font-family: 'Pinyon Script', cursive;
+    font-weight: normal;
+    font-size: 38px;
     color: var(--pink-floral);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .event-card .event-desc {
     font-family: 'Playfair Display', serif;
+    font-style: italic;
     font-size: 15px;
     line-height: 1.5;
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 
 /* RSVP Block */
@@ -580,6 +581,7 @@ section {
 
 .closing-text {
     font-family: 'Playfair Display', serif;
+    font-style: italic;
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-dark);
