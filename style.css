@@ -101,18 +101,19 @@ body {
 
 .floating-text h1 {
     font-family: 'Great Vibes', cursive;
-    font-size: 5rem;
+    font-size: clamp(1.4rem, 4.5vw, 3.2rem);
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    line-height: 1.1;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .floating-text span {
-    font-size: 3rem;
+    font-size: clamp(1.1rem, 3.6vw, 2.5rem);
     font-family: 'Great Vibes', cursive;
     color: #fff;
-    display: block;
-    margin: 10px 0;
+    display: inline-block;
+    margin: 0 6px;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
@@ -251,7 +252,7 @@ section {
 
 .bismillah {
     font-family: 'Noto Nastaliq Urdu', serif;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
     line-height: 2;
     color: var(--gold-text);
     margin-bottom: 20px;
@@ -261,7 +262,7 @@ section {
 
 .arabic-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.75rem;
+    font-size: clamp(0.68rem, 2.2vw, 0.85rem);
     letter-spacing: 1px;
     color: var(--text-light);
     margin-bottom: 25px;
@@ -270,14 +271,14 @@ section {
 
 .blessings {
     font-style: italic;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2.8vw, 1.1rem);
     color: var(--text-dark);
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
 .request-text {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 3.2vw, 1.2rem);
     margin-bottom: 30px;
     color: var(--pink-floral);
 }
@@ -288,7 +289,7 @@ section {
 
 .bride-name, .groom-name {
     font-family: 'Great Vibes', cursive;
-    font-size: 4rem;
+    font-size: clamp(2.2rem, 7.5vw, 4rem);
     color: var(--pink-floral);
     line-height: 1.2;
     margin-bottom: 5px;
@@ -296,7 +297,7 @@ section {
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.85rem;
+    font-size: clamp(0.65rem, 2.4vw, 0.85rem);
     letter-spacing: 1.5px;
     color: var(--text-light);
     text-transform: uppercase;
@@ -305,7 +306,7 @@ section {
 
 .ampersand {
     display: inline-block;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
     font-style: italic;
     color: var(--gold-dark);
     margin: 10px 0 25px 0;
@@ -313,16 +314,57 @@ section {
 
 .journey-text {
     font-style: italic;
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 2.8vw, 1.1rem);
     color: var(--text-dark);
     margin-top: 30px;
     line-height: 1.6;
 }
 
+/* Animated Scroll Prompt */
+.scroll-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    color: var(--pink-floral);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    animation: bounceUpDown 2s infinite;
+    cursor: pointer;
+    user-select: none;
+}
+
+.scroll-prompt span {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.scroll-arrow {
+    font-size: 1.4rem;
+    margin-top: 2px;
+    color: var(--gold-text);
+    line-height: 1;
+}
+
+@keyframes bounceUpDown {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
 /* Common Section Titles */
 .section-title {
     font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 6.5vw, 3.5rem);
     color: var(--pink-floral);
     margin-bottom: 20px;
 }
@@ -468,7 +510,6 @@ section {
 
 /* Mobile Adjustments */
 @media (max-width: 480px) {
-    .floating-text h1 { font-size: 4rem; }
     .floral-top, .floral-bottom {
         width: 140px;
         height: 140px;
@@ -476,10 +517,6 @@ section {
     .page-border {
         /* let it scale naturally */
     }
-    .bride-name, .groom-name {
-        font-size: 3.5rem;
-    }
-    .bismillah { font-size: 3rem; }
     .card-inner {
         padding: 25px 15px;
     }

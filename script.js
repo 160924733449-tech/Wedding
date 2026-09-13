@@ -6,12 +6,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const bgMusic = document.getElementById('bg-music');
     const envelopeVideo = document.getElementById('envelope-video');
     const glowTransition = document.getElementById('glow-transition');
+    const scrollPrompt = document.getElementById('scroll-prompt');
+
+    // Preload video buffer immediately on load
+    if (envelopeVideo) {
+        envelopeVideo.load();
+    }
 
     openBtn.addEventListener('click', () => {
+        // Start video playback IMMEDIATELY on click to eliminate 1s delay
+        let transitionTriggered = false;
+
+        if (envelopeVideo) {
+            envelopeVideo.play().catch(error => {
+                console.log("Video play error:", error);
+            });
+
+            // Trigger glow transition at 4s or ended
+            envelopeVideo.addEventListener('timeupdate', () => {
+                if (envelopeVideo.currentTime >= 3.8 && !transitionTriggered) {
+                    clearTimeout(forceOpen);
+                    transitionTriggered = true;
+                    triggerGlowTransition();
+                }
+            });
+
+            envelopeVideo.addEventListener('ended', () => {
+                if (!transitionTriggered) {
+                    clearTimeout(forceOpen);
+                    transitionTriggered = true;
+                    triggerGlowTransition();
+                }
+            });
+        }
+
+        // Failsafe: guarantee the invitation opens after 2.5s even if video fails
+        const forceOpen = setTimeout(() => {
+            if (!transitionTriggered) {
+                transitionTriggered = true;
+                triggerGlowTransition();
+            }
+        }, 2500);
+
         // Fade out just the text and button overlay
         splashUi.classList.add('fade-out');
         
-        // Attempt to play the background nasheed immediately
+        // Attempt to play background audio
         if (bgMusic) {
             bgMusic.play().then(() => {
                 console.log("Audio playing successfully.");
@@ -19,47 +59,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Audio autoplay was prevented or failed:", error);
             });
         }
-
-        // Wait for the overlay text to fade out before starting the video
-        setTimeout(() => {
-            let transitionTriggered = false;
-
-            // Failsafe: guarantee the invitation opens after 2.5s even if video fails
-            const forceOpen = setTimeout(() => {
-                if (!transitionTriggered) {
-                    transitionTriggered = true;
-                    triggerGlowTransition();
-                }
-            }, 2500);
-
-            if (envelopeVideo) {
-                envelopeVideo.play().catch(() => {
-                    // Video failed to play — failsafe timeout will handle it
-                });
-                
-                // Trigger the glow transition at the 4 second mark
-                envelopeVideo.addEventListener('timeupdate', () => {
-                    if (envelopeVideo.currentTime >= 4.0 && !transitionTriggered) {
-                        clearTimeout(forceOpen);
-                        transitionTriggered = true;
-                        triggerGlowTransition();
-                    }
-                });
-
-                // Fallback in case the video ends before 4 seconds
-                envelopeVideo.addEventListener('ended', () => {
-                    if (!transitionTriggered) {
-                        clearTimeout(forceOpen);
-                        transitionTriggered = true;
-                        triggerGlowTransition();
-                    }
-                });
-            } else {
-                clearTimeout(forceOpen);
-                triggerGlowTransition(); // Fallback if video element missing
-            }
-        }, 800); // 800ms matches the CSS transition time for splash-ui
     });
+
+    // Scroll prompt click handler
+    if (scrollPrompt) {
+        scrollPrompt.addEventListener('click', () => {
+            const nextSection = document.querySelector('.events-section');
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 
     function triggerGlowTransition() {
         // 1. Show and activate glow
