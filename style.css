@@ -214,8 +214,8 @@ section {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-top: 12vh;
-    padding-bottom: 18vh;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
     box-sizing: border-box;
 }
 
@@ -385,12 +385,7 @@ section {
 
 /* Section 2: Events */
 .events-section {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15vh 20px;
+    padding: 20px 20px;
     box-sizing: border-box;
 }
 
@@ -398,7 +393,7 @@ section {
     background: transparent;
     border: none;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 20px 20px;
     margin: 0 auto;
     max-width: 450px;
     width: 100%;
@@ -554,13 +549,9 @@ section {
 
 /* Section 4: Closing */
 .closing-section {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15vh 20px;
+    padding: 30px 20px 25vh 20px;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .closing-text {
