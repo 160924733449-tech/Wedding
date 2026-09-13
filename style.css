@@ -101,19 +101,18 @@ body {
 
 .floating-text h1 {
     font-family: 'Pinyon Script', cursive;
-    font-size: clamp(1.4rem, 4.5vw, 3.2rem);
+    font-size: clamp(2.5rem, 8vw, 5rem);
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-    line-height: 1.2;
-    white-space: nowrap;
+    line-height: 1.1;
 }
 
 .floating-text span {
-    font-size: clamp(1.1rem, 3.6vw, 2.5rem);
+    font-size: clamp(1.5rem, 4.5vw, 3rem);
     font-family: 'Pinyon Script', cursive;
-    color: #fff;
+    color: var(--pink-light); /* Give 'weds' a slight tint for elegance */
     display: inline-block;
-    margin: 0 6px;
+    margin: 10px 0;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
@@ -592,7 +591,7 @@ section {
 
 /* Desktop & Larger Screens Adjustments */
 @media (min-width: 768px) {
-    .floating-text h1 { font-size: 6rem; }
+    /* Let clamp handle the size fluidly */
     
     .card-inner {
         max-width: 750px;
