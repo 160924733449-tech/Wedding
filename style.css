@@ -169,8 +169,8 @@ body {
     background-attachment: fixed;
     position: relative;
     min-height: 100vh;
-    padding-top: 80px;
-    padding-bottom: 120px;
+    padding-top: 45px;
+    padding-bottom: 90px;
 }
 
 .content.visible {
@@ -203,7 +203,7 @@ body {
 
 /* Sections */
 section {
-    padding: 30px 20px;
+    padding: 20px 20px;
     text-align: center;
 }
 
@@ -212,8 +212,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .card-inner {
@@ -223,7 +223,7 @@ section {
     background: transparent;
     border: none;
     border-radius: 20px;
-    padding: 20px 25px;
+    padding: 5px 15px;
     overflow: hidden;
 }
 
@@ -251,72 +251,73 @@ section {
 }
 
 .bismillah-img {
-    max-width: 260px;
-    width: 75%;
+    max-width: 240px;
+    width: 70%;
     height: auto;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 6px auto;
     display: block;
     mix-blend-mode: multiply;
 }
 
 .arabic-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.65rem, 2.2vw, 0.8rem);
+    font-size: clamp(0.62rem, 2vw, 0.78rem);
     letter-spacing: 1px;
     color: var(--text-light);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     text-transform: uppercase;
 }
 
 .blessings {
     font-style: italic;
-    font-size: clamp(0.85rem, 2.8vw, 1.05rem);
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
     color: var(--text-dark);
-    margin-bottom: 12px;
-    line-height: 1.5;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
 .request-text {
-    font-size: clamp(0.9rem, 3vw, 1.15rem);
-    margin-bottom: 15px;
+    font-size: clamp(0.85rem, 2.8vw, 1.1rem);
+    margin-bottom: 10px;
     color: var(--pink-floral);
 }
 
 .names-wrapper {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .bride-name, .groom-name {
     font-family: 'Great Vibes', cursive;
-    font-size: clamp(2rem, 7vw, 3.8rem);
+    font-size: clamp(1.8rem, 6.5vw, 3.5rem);
     color: var(--pink-floral);
-    line-height: 1.15;
-    margin-bottom: 4px;
+    line-height: 1.1;
+    margin-bottom: 2px;
 }
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.62rem, 2.2vw, 0.8rem);
+    font-size: clamp(0.6rem, 2.1vw, 0.75rem);
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .ampersand {
     display: inline-block;
-    font-size: clamp(1.3rem, 4.5vw, 2rem);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
     font-style: italic;
     color: var(--gold-dark);
-    margin: 4px 0 10px 0;
+    margin: 2px 0 6px 0;
 }
 
 .journey-text {
     font-style: italic;
-    font-size: clamp(0.8rem, 2.6vw, 1rem);
+    font-size: clamp(0.78rem, 2.4vw, 0.95rem);
     color: var(--text-dark);
-    margin-top: 12px;
-    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    line-height: 1.4;
 }
 
 /* Animated Scroll Prompt */
@@ -325,11 +326,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 0px;
     color: var(--pink-floral);
     font-family: 'Montserrat', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     animation: bounceUpDown 2s infinite;
