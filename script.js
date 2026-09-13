@@ -8,10 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const glowTransition = document.getElementById('glow-transition');
     const scrollPrompt = document.getElementById('scroll-prompt');
 
-    // Preload video buffer immediately on load
-    if (envelopeVideo) {
-        envelopeVideo.load();
+    // ========================================================
+    // UNIFORM CARD SCALER — guarantees identical layout on ALL devices
+    // Design reference: 360px wide × 680px tall
+    // The card is designed at a fixed pixel size, then uniformly
+    // scaled (like zooming a photo) to fit any viewport.
+    // ========================================================
+    const DESIGN_W = 360;
+    const DESIGN_H = 680;
+
+    function scaleCard() {
+        const card = document.querySelector('.card-inner');
+        if (!card) return;
+
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        // Leave safe margins for the fixed rose borders (top ~12%, bottom ~10%)
+        const safeW = vw * 0.92;   // 4% margin each side
+        const safeH = vh * 0.78;   // 12% top roses + 10% bottom roses
+
+        // Pick the smallest scale so the card fits fully inside the safe zone
+        const scale = Math.min(safeW / DESIGN_W, safeH / DESIGN_H);
+
+        card.style.transform = `scale(${scale})`;
     }
+
+    scaleCard();
+    window.addEventListener('resize', scaleCard);
+    window.addEventListener('orientationchange', () => {
+        setTimeout(scaleCard, 150);
+    });
 
     openBtn.addEventListener('click', () => {
         // Start video playback IMMEDIATELY on click to eliminate 1s delay
