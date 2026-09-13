@@ -264,37 +264,38 @@ section {
     max-width: 240px;
     width: 70%;
     height: auto;
-    margin: 0 auto 2px auto;
+    margin: 0 auto 5px auto;
     display: block;
     mix-blend-mode: multiply;
 }
 
 .arabic-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.65rem, 2.5vw, 0.8rem);
-    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+    letter-spacing: 0.5px;
     color: var(--text-light);
-    margin-top: 0px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    margin-top: -5px; /* Pull closer to image */
+    margin-bottom: 30px; /* Big gap below */
+    text-transform: none; /* Make it graceful, not shouting */
 }
 
 .blessings {
     font-style: italic;
     font-size: clamp(0.85rem, 3vw, 1rem);
     color: var(--text-dark);
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     line-height: 1.4;
 }
 
 .request-text {
     font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    margin-bottom: 10px;
+    margin-bottom: 35px; /* Huge gap before the names start */
     color: var(--pink-floral);
 }
 
 .names-wrapper {
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 .bride-name, .groom-name {
@@ -302,7 +303,7 @@ section {
     font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: var(--pink-floral);
     line-height: 1.1;
-    margin-bottom: 2px;
+    margin-bottom: 8px; /* Give script text room to breathe */
 }
 
 
@@ -312,7 +313,7 @@ section {
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 6px;
+    margin-bottom: 25px; /* Massive gap after parents name */
 }
 
 .ampersand {
@@ -320,7 +321,7 @@ section {
     font-size: clamp(1.4rem, 5vw, 2rem);
     font-style: italic;
     color: var(--gold-dark);
-    margin: 2px 0 6px 0;
+    margin: 5px 0 25px 0; /* Massive gap around ampersand */
 }
 
 .journey-text {
