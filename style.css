@@ -211,13 +211,13 @@ section {
 
 /* Section 1: Main Card */
 .card-section {
-    min-height: 85dvh; /* Shorter so the next section is closer */
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 15vh;
-    padding-bottom: 5vh;
+    padding-top: 15vh; /* Pushes content down past the fixed top roses */
+    padding-bottom: 12vh; /* Pushes content up past the fixed bottom roses */
     box-sizing: border-box;
 }
 
@@ -225,14 +225,16 @@ section {
     position: relative;
     max-width: 500px;
     width: 100%;
+    height: 100%; /* Force it to take the full available height inside padding */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly; /* Magically distributes all remaining space perfectly between the text lines */
     align-items: center;
     background: transparent;
     border: none;
     border-radius: 20px;
     padding: 0 15px;
+    flex: 1;
 }
 
 /* Floral Corners */
