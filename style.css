@@ -92,49 +92,35 @@ body {
     pointer-events: none;
 }
 
-.floating-text {
-    animation: float 3s ease-in-out infinite;
-    text-align: center;
-    margin-bottom: 50px;
-    padding: 0 20px;
-}
-
-.floating-text h1 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: clamp(2.5rem, 8vw, 5rem);
-    color: #fdfaf1; /* Warm ivory to match the seal better than pure white */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-    line-height: 1.1;
-}
-
-.floating-text span {
-    font-size: clamp(1.2rem, 3.5vw, 2.2rem); /* Slightly smaller so it doesn't fight the names */
-    font-family: 'Pinyon Script', cursive;
-    color: var(--pink-light);
-    display: inline-block;
-    margin: 8px 0;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-}
-
-@keyframes float {
+@keyframes float-action {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-8px); }
     100% { transform: translateY(0px); }
 }
 
 .tap-container {
+    position: absolute;
+    bottom: 12vh; /* Positioned below the wax seal monogram */
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
+.floating-action {
+    animation: float-action 4s ease-in-out infinite;
+}
+
 .tap-hint {
-    font-size: 1.1rem;
-    color: #fdfaf1; /* Warm ivory */
-    margin-bottom: 15px;
-    letter-spacing: 1px;
+    font-size: 1.25rem; /* Increased size to serve as the main focus */
+    color: #fdfaf1; 
+    margin-bottom: 20px;
+    letter-spacing: 1.5px;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    text-transform: none; /* Removed uppercase blockiness */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8); /* Slightly stronger shadow for contrast */
 }
 
 .tap-btn {
