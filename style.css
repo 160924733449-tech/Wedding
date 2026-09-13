@@ -264,7 +264,7 @@ section {
     max-width: 240px;
     width: 70%;
     height: auto;
-    margin: 0 auto 5px auto;
+    margin: 0 auto -10px auto; /* Negative margin to counter transparent space in PNG */
     display: block;
     mix-blend-mode: multiply;
 }
@@ -275,7 +275,7 @@ section {
     font-size: clamp(0.75rem, 2.5vw, 0.9rem);
     letter-spacing: 0.5px;
     color: var(--text-light);
-    margin-top: -12px; /* Pulled much closer to image for tight grouping */
+    margin-top: -20px; /* Aggressively pulled up towards the image */
     margin-bottom: 30px; 
     text-transform: none; 
 }
