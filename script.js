@@ -18,13 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
         let transitionTriggered = false;
 
         if (envelopeVideo) {
+            envelopeVideo.playbackRate = 1.8; // Fasten up video animation speed
             envelopeVideo.play().catch(error => {
                 console.log("Video play error:", error);
             });
 
-            // Trigger glow transition at 4s or ended
+            // Trigger glow transition as video completes quickly
             envelopeVideo.addEventListener('timeupdate', () => {
-                if (envelopeVideo.currentTime >= 3.8 && !transitionTriggered) {
+                if (envelopeVideo.currentTime >= 1.8 && !transitionTriggered) {
                     clearTimeout(forceOpen);
                     transitionTriggered = true;
                     triggerGlowTransition();
@@ -40,13 +41,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
 
-        // Failsafe: guarantee the invitation opens after 2.5s even if video fails
+        // Fast failsafe: guarantee the invitation opens after 1.6s
         const forceOpen = setTimeout(() => {
             if (!transitionTriggered) {
                 transitionTriggered = true;
                 triggerGlowTransition();
             }
-        }, 2500);
+        }, 1600);
 
         // Fade out just the text and button overlay
         splashUi.classList.add('fade-out');

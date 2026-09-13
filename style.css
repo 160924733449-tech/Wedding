@@ -381,14 +381,7 @@ section {
 
 /* Section 2: Events */
 .events-section {
-    min-height: 100dvh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 65px;
-    padding-bottom: 90px;
+    padding: 30px 20px 40px 20px;
     box-sizing: border-box;
 }
 
@@ -436,6 +429,59 @@ section {
 .event-card .event-desc {
     font-size: 0.95rem;
     color: var(--text-light);
+}
+
+/* RSVP Block */
+.rsvp-block {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(212, 175, 55, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.rsvp-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--pink-floral);
+    text-transform: uppercase;
+}
+
+.rsvp-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.rsvp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 20px;
+    min-height: 44px;
+    background-color: #ffffff;
+    border: 1px solid var(--gold-text);
+    border-radius: 25px;
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.rsvp-btn:hover, .rsvp-btn:active {
+    background-color: var(--gold-primary);
+    color: #ffffff;
+    border-color: var(--gold-primary);
 }
 
 /* Section 3: Venue */
@@ -498,14 +544,7 @@ section {
 
 /* Section 4: Closing */
 .closing-section {
-    min-height: 100dvh;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 65px;
-    padding-bottom: 100px;
+    padding: 30px 20px 100px 20px;
     box-sizing: border-box;
 }
 
