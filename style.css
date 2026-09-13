@@ -100,7 +100,7 @@ body {
 }
 
 .floating-text h1 {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Pinyon Script', cursive;
     font-size: clamp(1.4rem, 4.5vw, 3.2rem);
     color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
@@ -110,7 +110,7 @@ body {
 
 .floating-text span {
     font-size: clamp(1.1rem, 3.6vw, 2.5rem);
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Pinyon Script', cursive;
     color: #fff;
     display: inline-block;
     margin: 0 6px;
@@ -296,16 +296,13 @@ section {
 }
 
 .bride-name, .groom-name {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Pinyon Script', cursive;
     font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: var(--pink-floral);
     line-height: 1.1;
     margin-bottom: 2px;
 }
 
-.bride-name::first-letter, .groom-name::first-letter {
-    font-size: 1.3em;
-}
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
@@ -377,7 +374,7 @@ section {
 
 /* Common Section Titles */
 .section-title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Pinyon Script', cursive;
     font-size: clamp(2.2rem, 6.5vw, 3.5rem);
     color: var(--pink-floral);
     margin-bottom: 20px;
