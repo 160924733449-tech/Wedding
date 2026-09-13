@@ -227,7 +227,9 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    background-image: url('bg.jpeg'); /* Match page background so mix-blend-mode works */
+    background-size: cover;
+    background-position: center;
     border: none;
     padding: 0 10px;
     transform-origin: center center;
@@ -258,8 +260,8 @@ section {
 }
 
 .bismillah-img {
-    max-width: 200px;
-    width: 200px;
+    max-width: 220px;
+    width: 220px;
     height: auto;
     margin: 0 auto -6px auto;
     display: block;
@@ -269,35 +271,35 @@ section {
 .arabic-text {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
     color: var(--text-light);
-    margin-top: -12px;
-    margin-bottom: 18px; 
+    margin-top: -10px;
+    margin-bottom: 14px; 
     text-transform: none; 
 }
 
 .blessings {
     font-style: italic;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--text-dark);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.4;
 }
 
 .request-text {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 18px;
+    margin-bottom: 8px;
     color: var(--pink-floral);
 }
 
 .names-wrapper {
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 .bride-name, .groom-name {
     font-family: 'Pinyon Script', cursive;
-    font-size: 44px;
+    font-size: 48px;
     color: var(--pink-floral);
     line-height: 1.1;
     margin-bottom: 3px;
@@ -305,27 +307,27 @@ section {
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .ampersand {
     display: inline-block;
-    font-size: 24px;
+    font-size: 26px;
     font-style: italic;
     color: var(--gold-dark);
-    margin: 4px 0 10px 0;
+    margin: 2px 0 8px 0;
 }
 
 .journey-text {
     font-style: italic;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-dark);
-    margin-top: 12px;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 4px;
     line-height: 1.4;
 }
 
@@ -335,11 +337,11 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 16px;
     margin-bottom: 0;
     color: var(--pink-floral);
     font-family: 'Montserrat', sans-serif;
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     animation: bounceUpDown 2s infinite;
