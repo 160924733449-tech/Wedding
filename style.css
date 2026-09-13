@@ -1,11 +1,11 @@
 :root {
     --gold-primary: #d4af37;
-    --gold-dark: #b89324;
-    --gold-text: #967a21; /* WCAG AA compliant gold for text on cream */
-    --pink-floral: #c67c85;
-    --pink-light: #eabec4;
-    --text-dark: #3a2e12;
-    --text-light: #5a4b2a;
+    --gold-dark: #aa8c2c;
+    --gold-text: #8c7322;
+    --pink-floral: #ba2545; /* Deep Rose Red to match header/footer flowers */
+    --pink-light: #df6e82;  /* Softer Rose Red */
+    --text-dark: #1f1606;   /* Darkened for much better readability */
+    --text-light: #3a2b10;  /* Darkened for readability */
     --bg-cream: #fdfaf1;
 }
 
@@ -275,9 +275,9 @@ section {
     font-size: clamp(0.75rem, 2.5vw, 0.9rem);
     letter-spacing: 0.5px;
     color: var(--text-light);
-    margin-top: -5px; /* Pull closer to image */
-    margin-bottom: 30px; /* Big gap below */
-    text-transform: none; /* Make it graceful, not shouting */
+    margin-top: -12px; /* Pulled much closer to image for tight grouping */
+    margin-bottom: 30px; 
+    text-transform: none; 
 }
 
 .blessings {
