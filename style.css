@@ -290,12 +290,12 @@ section {
 
 .request-text {
     font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-    margin-bottom: 35px; /* Huge gap before the names start */
+    margin-bottom: 15px; /* Reduced gap before the names start */
     color: var(--pink-floral);
 }
 
 .names-wrapper {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .bride-name, .groom-name {
@@ -303,9 +303,8 @@ section {
     font-size: clamp(2.2rem, 8vw, 3.5rem);
     color: var(--pink-floral);
     line-height: 1.1;
-    margin-bottom: 8px; /* Give script text room to breathe */
+    margin-bottom: 4px;
 }
-
 
 .parents-name {
     font-family: 'Montserrat', sans-serif;
@@ -313,7 +312,7 @@ section {
     letter-spacing: 1.2px;
     color: var(--text-light);
     text-transform: uppercase;
-    margin-bottom: 25px; /* Massive gap after parents name */
+    margin-bottom: 15px; /* Reduced gap after parents name */
 }
 
 .ampersand {
@@ -321,14 +320,14 @@ section {
     font-size: clamp(1.4rem, 5vw, 2rem);
     font-style: italic;
     color: var(--gold-dark);
-    margin: 5px 0 25px 0; /* Massive gap around ampersand */
+    margin: 5px 0 15px 0; /* Reduced gap around ampersand */
 }
 
 .journey-text {
     font-style: italic;
     font-size: clamp(0.78rem, 2.4vw, 0.95rem);
     color: var(--text-dark);
-    margin-top: 8px;
+    margin-top: 15px;
     margin-bottom: 8px;
     line-height: 1.4;
 }
